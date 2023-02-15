@@ -4,10 +4,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>메인페이지</title>
+		<title>로그아웃쩜제이에스피</title>
 	</head>
 	<body>
-		<h2>메인페이지</h2>
-		
+		<script>
+			location.href = "/";
+		</script>
 	</body>
 </html>
