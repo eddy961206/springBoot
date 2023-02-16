@@ -49,7 +49,6 @@ public class FController {
 		String name = "이순신";
 		mv.addObject("fname", name);
 		mv.setViewName("event/event"); // view페이지 
-		
 		return mv;
 	}
 	
