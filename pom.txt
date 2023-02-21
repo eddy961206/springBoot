@@ -1,0 +1,72 @@
+<!-- JSP 템플릿 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+
+# jsp위치설정#
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+# 포트설정 #
+server.port= 8080
+
+# context Path #  
+#server.servlet.context-path = /sc		# http://localhost:8080/sc/로 들어가야	
+
+# oracle DB 설정#
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xe
+spring.datasource.username=orauser
+spring.datasource.password=1111
+
+
+---------------------------------------------------------------------
+<properties>  <!--아래의 dependency들 버전관리를 한꺼번에. style태그 안에 css한꺼번에 적용하는 것처럼. -->
+		<logback-classic-version>1.4.5</logback-classic-version>
+<!--		<logback-classic-version>1.1.2</logback-classic-version>-->
+	</properties>	
+	
+	<dependencies>
+		<!-- org.springframework/spring-context -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>6.0.4</version>
+		</dependency>
+		<!-- org.slf4j/slf4j-api -->	<!-- 로그 출력 -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>2.0.6</version>
+		</dependency>
+		<!-- ch.qos.logback/logback-classic -->		<!-- 로그 만들기 -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-classic-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+		    		<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>	<!-- 실행될 때 로그를 찍겠다 -->
+		</dependency>
+		<!-- org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.26</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+	</dependencies>
